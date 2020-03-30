@@ -1,1 +1,1 @@
-# redirect_language
+# ECVAAST_RC

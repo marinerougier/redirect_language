@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>exp</title>
+    <script src="jspsych-6.0.3/jspsych.js"></script>
+</head>
+
+<body></body>
+
+<script>
+
+
+// language Question
+  var timeline = [];
+
+  var response = "no answer yet";
+  var French = "https://marinerougier.github.io/SocVaast_Coro_Fr/index.html";
+  var English = "https://marinerougier.github.io/SocVaast_Coro/index.html";
+
+  var language = {
+    type: "html-button-response",
+    stimulus: "<p class='instructions'><center>Please choose a language:</p></center>",
+    choices: ['English', 'Français'],
+    on_finish: function (data) {
+      response = data.button_pressed;
+      response = data.button_pressed == "0" ? "English" : "Français";
+      // console.log(response)
+    }
+  };
+
+console.log(response);
+
+
+//var is_compatible = (!response = English);
+
+if(response = English) {
+  window.location.href = English;
+    }
+
+else {
+  window.location.href = French;
+}
+
+
+  timeline.push(language);
+//  timeline.push(callSwitch);
+
+  jsPsych.init({
+    timeline: timeline,
+  });
+
+</script>
+
+</html>
+
+
+
